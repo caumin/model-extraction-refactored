@@ -1,0 +1,42 @@
+# Tramer MNIST Experiment Configuration
+run_dir: runs/tramer_mnist_experiment
+seed: 42
+device: cuda # or cpu
+
+logging:
+  log: tramer_mnist_experiment.log
+  log_level: INFO
+
+victim:
+  arch: prada_mnist_target
+  ckpt: ckpts/prada_mnist_target.pt
+  num_classes: 10
+  in_channels: 1
+
+student:
+  arch: prada_sub_cnn2 # Using prada_sub_cnn2 as a common substitute model
+  num_classes: 10
+  in_channels: 1
+  dropout_rate: 0.0
+
+query:
+  dataset: mnist
+  data_dir: data/
+  batch_size: 128
+  img_size: 28
+
+attack:
+  name: tramer
+  label_only: True
+  tramer:
+    rounds: 1
+    queries_per_round: 102400 # Total budget for Tramer
+    epochs: 10
+    batch_size: 128
+    lr: 0.01
+    strategy: linesearch # As per paper
+    candidate_factor: 2.0 # Default, not used for linesearch
+    ls_steps: 5 # Default
+    ls_jitter: 0.0 # Default
+    tr_seed_ratio: 0.25 # 25% of budget for random seed queries
+    tr_max_passes: 3 # Default

@@ -1,0 +1,122 @@
+[
+    {
+        "round": 0,
+        "n_queries": 200,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.9700000286102295,
+            "transferability_targeted": 0.0,
+            "rnd_agreement": 0.029999999329447746
+        },
+        "current_x_pool_size": 200,
+        "test_agreement_f1_macro": 0.0644178427076459,
+        "ru_agreement_accuracy": 0.0
+    },
+    {
+        "round": 1,
+        "n_queries": 400,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.10000000149011612,
+            "transferability_targeted": 0.014999999664723873,
+            "rnd_agreement": 0.8999999761581421
+        },
+        "current_x_pool_size": 400,
+        "test_agreement_f1_macro": 0.019200867835834388,
+        "ru_agreement_accuracy": 0.872
+    },
+    {
+        "round": 2,
+        "n_queries": 800,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.05999999865889549,
+            "transferability_targeted": 0.004999999888241291,
+            "rnd_agreement": 0.9399999976158142
+        },
+        "current_x_pool_size": 800,
+        "test_agreement_f1_macro": 0.1716053789763843,
+        "ru_agreement_accuracy": 0.8685
+    },
+    {
+        "round": 3,
+        "n_queries": 1600,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.04500000178813934,
+            "transferability_targeted": 0.0,
+            "rnd_agreement": 0.9549999833106995
+        },
+        "current_x_pool_size": 1600,
+        "test_agreement_f1_macro": 0.39291648972147397,
+        "ru_agreement_accuracy": 0.8595
+    },
+    {
+        "round": 4,
+        "n_queries": 3200,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.026875000447034836,
+            "transferability_targeted": 0.005625000223517418,
+            "rnd_agreement": 0.9731249809265137
+        },
+        "current_x_pool_size": 3200,
+        "test_agreement_f1_macro": 0.5942928901671344,
+        "ru_agreement_accuracy": 0.8695
+    },
+    {
+        "round": 5,
+        "n_queries": 6400,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.02656250074505806,
+            "transferability_targeted": 0.0003124999930150807,
+            "rnd_agreement": 0.973437488079071
+        },
+        "current_x_pool_size": 6400,
+        "test_agreement_f1_macro": 0.6871765155112819,
+        "ru_agreement_accuracy": 0.869
+    },
+    {
+        "round": 6,
+        "n_queries": 12800,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.012812499888241291,
+            "transferability_targeted": 0.003281249897554517,
+            "rnd_agreement": 0.9871875047683716
+        },
+        "current_x_pool_size": 12800,
+        "test_agreement_f1_macro": 0.7449981115005045,
+        "ru_agreement_accuracy": 0.86975
+    },
+    {
+        "round": 7,
+        "n_queries": 25600,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.0032031249720603228,
+            "transferability_targeted": 0.00023437499476131052,
+            "rnd_agreement": 0.9967968463897705
+        },
+        "current_x_pool_size": 25600,
+        "test_agreement_f1_macro": 0.7545741288286327,
+        "ru_agreement_accuracy": 0.871
+    },
+    {
+        "round": 8,
+        "n_queries": 51200,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.0012890625512227416,
+            "transferability_targeted": 3.9062499126885086e-05,
+            "rnd_agreement": 0.9987109303474426
+        },
+        "current_x_pool_size": 51200,
+        "test_agreement_f1_macro": 0.7752746045024244,
+        "ru_agreement_accuracy": 0.86325
+    },
+    {
+        "round": 9,
+        "n_queries": 102400,
+        "papernot_transferability": {
+            "transferability_untargeted": 0.0013671874767169356,
+            "transferability_targeted": 0.0,
+            "rnd_agreement": 0.9986327886581421
+        },
+        "current_x_pool_size": 102400,
+        "test_agreement_f1_macro": 0.79592232330799,
+        "ru_agreement_accuracy": 0.8585
+    }
+]

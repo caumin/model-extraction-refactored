@@ -1,0 +1,20 @@
+{
+  "attack": {
+    "name": "tramer",
+    "label_only": true,
+    "tramer": {
+      "rounds": 1,
+      "queries_per_round": 102400,
+      "epochs": 10,
+      "batch_size": 128,
+      "lr": 0.01,
+      "strategy": "linesearch",
+      "candidate_factor": 2.0,
+      "ls_steps": 5,
+      "ls_jitter": 0.0,
+      "tr_seed_ratio": 0.25,
+      "tr_max_passes": 3
+    }
+  },
+  "n_queries": 1587328
+}

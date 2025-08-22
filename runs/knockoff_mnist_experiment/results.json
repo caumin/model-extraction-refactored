@@ -1,0 +1,19 @@
+{
+  "attack": {
+    "name": "knockoff",
+    "label_only": true,
+    "knockoff": {
+      "query_budget": 102400,
+      "epochs": 10,
+      "batch_size": 128,
+      "lr": 0.01,
+      "policy": "random",
+      "reward": "loss",
+      "temperature": 1.0,
+      "policy_lr": 0.001,
+      "queries_per_round": 10240,
+      "div_subset_size": 1000
+    }
+  },
+  "n_queries": 102400
+}

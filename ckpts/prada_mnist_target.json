@@ -1,0 +1,6 @@
+{
+  "arch": "prada_mnist_target",
+  "dataset": "mnist",
+  "best_acc": 0.9937,
+  "epoch": 29
+}

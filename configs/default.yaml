@@ -1,0 +1,85 @@
+# Default configuration
+
+run_dir: "runs/default"
+device: "cuda"
+seed: 42
+
+victim:
+  arch: "resnet34"
+  ckpt: "./ckpts/prada_mnist_target.pt"
+  num_classes: 10
+  in_channels: 1
+
+student:
+  arch: "resnet18"
+
+attack:
+  name: "maze"
+  label_only: True
+  # Attack-specific parameters
+  papernot:
+    rounds: 1
+    lambda_aug: 0.1
+    reservoir: 100
+    epochs: 1
+    batch_size: 128
+    lr: 1e-3
+    crafter: "jbda"
+    target_policy: "next"
+
+  # knockoff:
+  #   policy: "adaptive"
+  #   reward: "loss"
+  #   temperature: 1.0
+  #   policy_lr: 0.2
+  #   queries_per_round: 1024
+  #   epochs: 1
+  #   batch_size: 128
+  #   lr: 1e-3
+  #   query_budget: 100
+  #   div_subset_size: 1000
+
+  # tramer:
+  #   rounds: 5
+  #   queries_per_round: 1024
+  #   epochs: 3
+  #   batch_size: 128
+  #   lr: 1e-3
+  #   strategy: "linesearch"
+  #   candidate_factor: 2.0
+  #   ls_steps: 5
+  #   ls_jitter: 0.0
+  #   tr_seed_ratio: 0.25
+  #   tr_max_passes: 3
+
+  prada:
+    rounds: 1
+    lambda_aug: 0.1
+    reservoir: 100
+    epochs: 1
+    batch_size: 128
+    lr: 1e-3
+    crafter: "jbda"
+    target_policy: "next"
+
+  dfme:
+    dfme_param1: 10
+    dfme_param2: 0.5
+
+  cloud_leak:
+    cl_param1: 10
+    cl_param2: 0.5
+
+  maze:
+    maze_param1: 10
+    maze_param2: 0.5
+
+query:
+  dataset: "mnist"
+  data_dir: "./data"
+  batch_size: 128
+  img_size: 28
+
+logging:
+  log: True
+  log_level: "DEBUG"

@@ -1,0 +1,32 @@
+[
+    {
+        "round": 0,
+        "n_queries": 70240,
+        "agreement_score": 0.992968738079071,
+        "current_labeled_dataset_size": 10240
+    },
+    {
+        "round": 1,
+        "n_queries": 80480,
+        "agreement_score": 0.9959961175918579,
+        "current_labeled_dataset_size": 20480
+    },
+    {
+        "round": 2,
+        "n_queries": 90720,
+        "agreement_score": 0.9955403804779053,
+        "current_labeled_dataset_size": 30720
+    },
+    {
+        "round": 3,
+        "n_queries": 100960,
+        "agreement_score": 0.9952392578125,
+        "current_labeled_dataset_size": 40960
+    },
+    {
+        "round": 4,
+        "n_queries": 102400,
+        "agreement_score": 0.9947641491889954,
+        "current_labeled_dataset_size": 42400
+    }
+]

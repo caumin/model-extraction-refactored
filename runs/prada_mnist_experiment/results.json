@@ -1,0 +1,28 @@
+{
+  "attack": {
+    "name": "prada",
+    "label_only": true,
+    "prada": {
+      "rounds": 10,
+      "lambda_aug": 0.1,
+      "epochs": 10,
+      "batch_size": 128,
+      "lr": 0.01,
+      "reservoir": null,
+      "crafter": "jbda",
+      "target_policy": "next",
+      "jsma_k": 32,
+      "pn_targeted": false,
+      "pn_steps": 1,
+      "pn_momentum": 0.9,
+      "pn_eps": 0.25,
+      "query_budget": 102400,
+      "optimizer_type": "sgd",
+      "optimizer_params": {
+        "momentum": 0.9
+      },
+      "seed_per_class": 10
+    }
+  },
+  "n_queries": 102400
+}

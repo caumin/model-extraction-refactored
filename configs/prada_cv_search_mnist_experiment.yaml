@@ -1,0 +1,53 @@
+# PRADA MNIST Experiment Configuration with CV-SEARCH
+run_dir: runs/prada_cv_search_mnist_experiment
+seed: 42
+device: cuda # or cpu
+
+logging:
+  log: prada_cv_search_mnist_experiment.log
+  log_level: INFO
+
+victim:
+  arch: prada_mnist_target
+  ckpt: ckpts/prada_mnist_target.pt
+  num_classes: 10
+  in_channels: 1
+
+student:
+  arch: prada_sub_cnn2 # Using prada_sub_cnn2 as a common substitute model
+  num_classes: 10
+  in_channels: 1
+  dropout_rate: 0.5 # Example dropout rate for CV-SEARCH
+
+query:
+  dataset: mnist
+  data_dir: data/
+  batch_size: 128
+  img_size: 28
+
+attack:
+  name: prada
+  label_only: True # Assuming label-only queries for PRADA
+  prada:
+    rounds: 10 # 10 rounds for 1024x increase
+    lambda_aug: 0.1 # Step size for adversarial example generation (e.g., JbDA)
+    epochs: 1 # Placeholder, will be optimized by CV-SEARCH
+    batch_size: 128 # Batch size for student training
+    lr: 0.001 # Placeholder, will be optimized by CV-SEARCH
+    reservoir: null # Disable reservoir for strict doubling
+    crafter: jbda # Initial crafter, can be fgsm, ifgsm, mifgsm, color, jsma
+    target_policy: next # Policy for selecting target labels for adversarial examples
+    jsma_k: 32 # K for JSMA
+    pn_targeted: False # Targeted attack for FGSM family
+    pn_steps: 1 # Steps for iterative FGSM (1 for FGSM, >1 for I-FGSM, MI-FGSM)
+    pn_momentum: 0.9 # Momentum for MI-FGSM
+    pn_eps: 0.25 # Epsilon for FGSM family (64/255)
+    query_budget: 102400 # Total query budget
+    optimizer_type: sgd # Optimizer for student training (adam or sgd)
+    optimizer_params:
+      momentum: 0.9
+    seed_per_class: 10 # Initial seed samples per class (10 classes * 10 samples = 100 initial queries)
+    cv_search_enabled: True # Enable CV-SEARCH
+    cv_n_calls: 10 # Number of Bayesian optimization iterations
+    cv_n_initial_points: 5 # Number of random points to sample before fitting the surrogate model
+    cv_n_folds: 5 # Number of folds for cross-validation

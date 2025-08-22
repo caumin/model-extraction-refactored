@@ -1,0 +1,41 @@
+# Knockoff MNIST Experiment Configuration
+run_dir: runs/knockoff_mnist_experiment
+seed: 42
+device: cuda # or cpu
+
+logging:
+  log: knockoff_mnist_experiment.log
+  log_level: INFO
+
+victim:
+  arch: prada_mnist_target
+  ckpt: ckpts/prada_mnist_target.pt
+  num_classes: 10
+  in_channels: 1
+
+student:
+  arch: prada_sub_cnn2 # Using prada_sub_cnn2 as a common substitute model
+  num_classes: 10
+  in_channels: 1
+  dropout_rate: 0.0
+
+query:
+  dataset: mnist
+  data_dir: data/
+  batch_size: 128
+  img_size: 28
+
+attack:
+  name: knockoff
+  label_only: True
+  knockoff:
+    query_budget: 102400
+    epochs: 10
+    batch_size: 128
+    lr: 0.01
+    policy: random # Can be 'random' or 'adaptive'
+    reward: loss # Can be 'loss', 'cert', or 'div'
+    temperature: 1.0
+    policy_lr: 0.001
+    queries_per_round: 10240 # 102400 total queries / 10 rounds
+    div_subset_size: 1000

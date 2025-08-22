@@ -1,0 +1,8 @@
+[
+    {
+        "round": 0,
+        "n_queries": 1587328,
+        "agreement_score": 0.6105663776397705,
+        "current_labeled_dataset_size": 102400
+    }
+]
