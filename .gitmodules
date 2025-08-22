@@ -1,0 +1,9 @@
+[submodule "external_repos/DNN-Model-Stealing"]
+	path = external_repos/DNN-Model-Stealing
+	url = https://github.com/yunyuntsai/DNN-Model-Stealing.git
+[submodule "external_repos/PyTorch_CIFAR10"]
+	path = external_repos/PyTorch_CIFAR10
+	url = https://github.com/huyvnphan/PyTorch_CIFAR10.git
+[submodule "external_repos/datafree-model-extraction"]
+	path = external_repos/datafree-model-extraction
+	url = https://github.com/cake-lab/datafree-model-extraction.git
